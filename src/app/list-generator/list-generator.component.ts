@@ -41,19 +41,4 @@ export class ListGeneratorComponent implements OnInit {
     }
     parentNode.appendChild(documentTree);
   };
-
-  addChild2 = (parentNode: any, currentMenu: Menu) => {
-    const elementTree = document.createElement('li');
-    elementTree.textContent = 'name: ' + currentMenu.name;
-
-    if (currentMenu.child.length !== 0) {
-      currentMenu.child.forEach((each) => {
-        const ulElement = document.createElement('ul');
-        const subNameElement = document.createElement('div');
-        subNameElement.textContent = 'name: ' + each.name;
-        ulElement.append(subNameElement);
-        elementTree.appendChild(ulElement);
-      });
-    }
-  };
 }
